@@ -12,6 +12,7 @@ router.get("/create", (req, res) => {
   res.render("createResource");
 });
 
+//get all food, or get food by zip
 router.get("/food", async (req, res) => {
   try {
     // Retrieve foods based on the ZIP code (if provided)
@@ -21,7 +22,7 @@ router.get("/food", async (req, res) => {
     // Render the "index" page with the list of foods
     res.render("index", { foods: foods });
   } catch (error) {
-    console.error(error); // Log the error for debugging
+    console.error(error); 
     res.status(500).json({ error: "document not available" });
   }
 });
