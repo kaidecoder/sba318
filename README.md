@@ -42,7 +42,18 @@ These bonus objectives cannot increase your overall score above 100%. Successful
 
 ## Reflection (Optional)
 Once you have completed your project, answer the following questions to help solidify your understanding of the process and its outcomes, as well as improve your ability to handle similar tasks in the future.
+
 What could you have done differently during the planning stages of your project to make the execution easier?
-Were there any requirements that were difficult to implement? What do you think would make them easier to implement in future projects?
+- This process was terribly hard. Maybe taking notes as I went along would have prevented the repetition that ocurred as a result of not thinking a resource was important, until I needed it.
+
+Were there any requirements that were difficult to implement? 
+- Yes.  Connecting to the database, making the models and the schema, performing CRUD were all terribly hard to do.
+
+What do you think would make them easier to implement in future projects?
+- I need to practice doing these things a lot in order to develop my CRUD making muscles.
+
 What would you add to or change about your application if given more time?
+- I would change the color scheme, output the data to a card, put all in a grid, add more to my api, change how I named my routes, and some other things.
+
 Use this space to make notes for your future self about anything that you think is important to remember about this process or that may aid you when attempting something similar.
+- Dear future self, you messed up the naming of your routes because you panicked when you were making them, and thought that by keeping them simple you could understand your code better.  The simplicity did work in your favor, but then later when you wanted to upgrade the routes to include api, then you had trouble renaming them.  So maybe you should stop being so afraid of breaking your program and just go for it.  Do the things you think are hard and have confidence in yourself
