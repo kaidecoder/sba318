@@ -27,7 +27,7 @@ router.get("/food", (req, res) => {
   //query food with zip=02116
 router.get("/food", async (req, res) => {
   const zip = req.query.zip
-  Food.findOne({zip})
+  Food.find({zip})
   .then(doc => {
       res.status(200).json(doc)
   })
@@ -35,6 +35,8 @@ router.get("/food", async (req, res) => {
       res.status(500).json({error: "document not available"})
   })
 })
+
+
   
   //add a new food
   router.post("/food", (req, res) => {
