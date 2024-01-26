@@ -26,14 +26,14 @@ router.get("/food", (req, res) => {
 
   //query food with zip=02116
 router.get("/food", async (req, res) => {
-    const zip = req.query.zip
-    Food.findOne({zip})
-    .then(doc => {
-        res.status(200).json(doc)
-    })
-    .catch(error => {
-        res.status(500).json({error: "document not available"})
-    })
+  const zip = req.query.zip
+  Food.findOne({zip})
+  .then(doc => {
+      res.status(200).json(doc)
+  })
+  .catch(error => {
+      res.status(500).json({error: "document not available"})
+  })
 })
   
   //add a new food
