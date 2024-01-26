@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/header.ejs")%>
+  <body>
+    <%- include("../partials/nav.ejs")%>
+    <h2>Resources for Housing</h2>
+    <div class="">
+      <% if(housing.length > 0){%> <% housing.forEach(item => { %>
+      <div class="housing content">
+        
+            <h3 class="title"><a href="http://www.<%= item.webpage %>"><%= item.name %></a></h3>
+
+            <h3><a class="single" href="/housing/<%= item._id %>">GET THIS HOUSING PLACE</a></h3>
+
+            <p class="phone"><%= item.phone %></p>
+
+            <p class="street"><%= item.street %></p>
+            <p class="city"><%= item.city %>, <span class="state"><%= item.state %></span> <span class="zip"><%= item.zip %></span></p>
+            <hr>
+        
+      </div>
+      <% }) %> <% }else{ %>
+      <p>There is no housing to show!!</p>
+      <% } %>
+    </div>
+    <%- include("../partials/footer.ejs")%>
+  </body>
+</html>

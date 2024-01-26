@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/header.ejs")%>
+  <body>
+    <%- include("../partials/nav.ejs")%>
+    <h2>Resources for Housing</h2>
+    <div class="housing content">
+        <h3 class="title"><a href="http://www.<%= housing.webpage %>"><%= housing.name %></a></h3>
+
+        <p class="phone"><%= housing.phone %></p>
+
+        <p class="street"><%= housing.street %></p>
+        <p class="city"><%= housing.city %>, <span class="state"><%= housing.state %></span> <span class="zip"><%= housing.zip %></span></p>
+        <hr>
+        <a class="delete download-btn" data-food="<%= housing._id %>">DELETE</a>
+    </div>
+    <%- include("../partials/footer.ejs")%>
+    <script>
+        const deleteBtn = document.querySelector(".delete")
+        deleteBtn.addEventListener("click", e => {
+            const endpoint = `/food/${deleteBtn.dataset.housing}`
+            fetch(endpoint, {
+                method: "DELETE"
+            })
+            .then((response) => {
+                response.json()
+            })
+            .then(data => window.location.href = "/housing")
+            .catch(error => {
+                console.log(error)
+            })
+        })
+    </script>
+  </body>
+</html>

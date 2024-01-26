@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/header.ejs")%>
+  <body>
+    <%- include("../partials/nav.ejs")%>
+    <h2>Resources for food</h2>
+    <div class="">
+      <% if(foods.length > 0){%> <% foods.forEach(food => { %>
+      <div class="foods content">
+        
+            <h3 class="title"><a href="http://www.<%= food.webpage %>"><%= food.name %></a></h3>
+
+            <h3><a class="single" href="/food/<%= food._id %>">GET THIS FOOD PLACE</a></h3>
+
+            <p class="phone"><%= food.phone %></p>
+
+            <p class="street"><%= food.street %></p>
+            <p class="city"><%= food.city %>, <span class="state"><%= food.state %></span> <span class="zip"><%= food.zip %></span></p>
+            <hr>
+        
+      </div>
+      <% }) %> <% }else{ %>
+      <p>There is no food to show!!</p>
+      <% } %>
+    </div>
+    <%- include("../partials/footer.ejs")%>
+  </body>
+</html>

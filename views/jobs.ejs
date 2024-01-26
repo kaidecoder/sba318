@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/header.ejs")%>
+  <body>
+    <%- include("../partials/nav.ejs")%>
+    <h2>Resources for Jobs</h2>
+    <div class="">
+      <% if(jobs.length > 0){%> <% jobs.forEach(job => { %>
+      <div class="job content">
+        
+            <h3 class="title"><a href="http://www.<%= job.webpage %>"><%= job.name %></a></h3>
+
+            <h3><a class="single" href="/job/<%= job._id %>">GET THIS JOB</a></h3>
+
+            <p class="phone"><%= job.phone %></p>
+
+            <p class="street"><%= job.street %></p>
+            <p class="city"><%= job.city %>, <span class="state"><%= job.state %></span> <span class="zip"><%= job.zip %></span></p>
+            <hr>
+        
+      </div>
+      <% }) %> <% }else{ %>
+      <p>There is no job to show!!</p>
+      <% } %>
+    </div>
+    <%- include("../partials/footer.ejs")%>
+  </body>
+</html>
