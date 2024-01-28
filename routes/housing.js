@@ -54,15 +54,15 @@ router.get("/housing", (req, res) => {
   
   //delete a housing item
   router.delete("/housing/:id", (req, res) => {
-    const id = req.params.id 
+    const id = req.params.id;
     Housing.findByIdAndDelete(id)
-    .then(result => {
-      res.json({redirect: "/housing"})
-    })
-    .catch(error => {
-      console.log(error)
-    })
-  })
+      .then((result) => {
+        res.json({ redirect: "/housing" });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
   
   //update a housing item
   router.patch("/housing/:id", async (req, res) => {

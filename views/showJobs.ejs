@@ -12,13 +12,13 @@
         <p class="street"><%= job.street %></p>
         <p class="city"><%= job.city %>, <span class="state"><%= job.state %></span> <span class="zip"><%= job.zip %></span></p>
         <hr>
-        <a class="delete download-btn" data-food="<%= job._id %>">DELETE</a>
+        <a class="delete download-btn" data-job="<%= job._id %>">DELETE</a>
     </div>
     <%- include("../partials/footer.ejs")%>
     <script>
         const deleteBtn = document.querySelector(".delete")
         deleteBtn.addEventListener("click", e => {
-            const endpoint = `/food/${deleteBtn.dataset.job}`
+            const endpoint = `/job/${deleteBtn.dataset.job}`
             fetch(endpoint, {
                 method: "DELETE"
             })
